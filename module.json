@@ -1,0 +1,15 @@
+{
+    "code": "corals-advert",
+    "name": "Advert",
+    "author": "Corals",
+    "type": "module",
+    "description": "Advert",
+    "namespace": "Corals\\Modules\\Advert",
+    "provider": "AdvertServiceProvider",
+    "version": "1.0",
+    "load_order": "0",
+    "folder": "corals-advert",
+    "icon": "fa fa-comment",
+    "require": {
+    }
+}
