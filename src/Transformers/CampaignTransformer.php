@@ -21,7 +21,6 @@ class CampaignTransformer extends BaseTransformer
      */
     public function transform(Campaign $campaign)
     {
-
         $advertiser_show_url = url(config('advert.models.advertiser.resource_url') . '/' . $campaign->advertiser->hashed_id);
 
         $show_url = url($this->resource_url, $campaign->hashed_id);
@@ -40,7 +39,7 @@ class CampaignTransformer extends BaseTransformer
             'ends_at' => $campaign->ends_at ? format_date($campaign->ends_at) : 'Don\'t expire.',
             'created_at' => format_date($campaign->created_at),
             'updated_at' => format_date($campaign->updated_at),
-            'action' => $this->actions($campaign)
+            'action' => $this->actions($campaign),
         ];
 
         return parent::transformResponse($transformedArray);

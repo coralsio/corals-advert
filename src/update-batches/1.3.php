@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
+use Carbon\Carbon;
 use Illuminate\Database\Schema\Blueprint;
 
-use Carbon\Carbon;
-
+use Illuminate\Support\Facades\Schema;
 
 Schema::table('advert_advertisers', function (Blueprint $table) {
     $table->nullableMorphs('owner');

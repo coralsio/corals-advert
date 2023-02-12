@@ -36,13 +36,13 @@ class CampaignRequest extends BaseRequest
                 'starts_at' => 'required|date',
                 'ends_at' => 'nullable|date|after_or_equal:starts_at',
                 'weight' => 'required',
-                'limit_per_day' => 'required_with:limit_type'
+                'limit_per_day' => 'required_with:limit_type',
             ]);
         }
 
         if ($this->isStore()) {
             $rules = array_merge($rules, [
-                'name' => 'required|max:191|unique:advert_campaigns,name'
+                'name' => 'required|max:191|unique:advert_campaigns,name',
             ]);
         }
 
@@ -72,6 +72,5 @@ class CampaignRequest extends BaseRequest
         $this->getInputSource()->replace($data);
 
         return parent::getValidatorInstance();
-
     }
 }

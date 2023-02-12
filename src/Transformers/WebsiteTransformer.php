@@ -33,7 +33,7 @@ class WebsiteTransformer extends BaseTransformer
             'status' => formatStatusAsLabels($website->status),
             'created_at' => format_date($website->created_at),
             'updated_at' => format_date($website->updated_at),
-            'action' => $this->actions($website)
+            'action' => $this->actions($website),
         ];
 
         return parent::transformResponse($transformedArray);

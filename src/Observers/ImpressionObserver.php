@@ -6,7 +6,6 @@ use Corals\Modules\Advert\Models\Impression;
 
 class ImpressionObserver
 {
-
     /**
      * @param Impression $impression
      */

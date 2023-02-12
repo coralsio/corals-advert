@@ -6,7 +6,6 @@ use Corals\Foundation\Transformers\FractalPresenter;
 
 class CampaignPresenter extends FractalPresenter
 {
-
     /**
      * @param array $extras
      * @return CampaignTransformer|\League\Fractal\TransformerAbstract

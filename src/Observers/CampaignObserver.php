@@ -6,7 +6,6 @@ use Corals\Modules\Advert\Models\Campaign;
 
 class CampaignObserver
 {
-
     /**
      * @param Campaign $campaign
      */

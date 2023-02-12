@@ -6,12 +6,15 @@ use Corals\Foundation\Models\BaseModel;
 use Corals\Foundation\Transformers\PresentableTrait;
 use Corals\Modules\Advert\Traits\DimensionModelTrait;
 use Spatie\Activitylog\Traits\LogsActivity;
-use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Banner extends BaseModel implements HasMedia
 {
-    use PresentableTrait, LogsActivity, InteractsWithMedia , DimensionModelTrait;
+    use PresentableTrait;
+    use LogsActivity;
+    use InteractsWithMedia ;
+    use DimensionModelTrait;
 
     protected $table = 'advert_banners';
 
@@ -53,5 +56,4 @@ class Banner extends BaseModel implements HasMedia
     {
         return $this->belongsToMany(Zone::class, 'advert_banner_zone');
     }
-
 }

@@ -64,6 +64,7 @@ class AdvertisersDataTable extends BaseDataTable
     protected function getOptions()
     {
         $url = url(config('advert.models.advertiser.resource_url'));
+
         return ['resource_url' => $url];
     }
 }

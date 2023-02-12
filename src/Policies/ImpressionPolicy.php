@@ -10,6 +10,7 @@ class ImpressionPolicy extends BasePolicy
     protected $administrationPermission = 'Administrations::admin.advertiser';
 
     protected $skippedAbilities = ['create'];
+
     /**
      * @param User $user
      * @return bool
@@ -19,7 +20,7 @@ class ImpressionPolicy extends BasePolicy
         if ($user->can('Advert::impression.view')) {
             return true;
         }
+
         return false;
     }
-
 }

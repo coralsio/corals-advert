@@ -38,7 +38,7 @@ class BannerTransformer extends BaseTransformer
             'status' => formatStatusAsLabels($banner->status),
             'created_at' => format_date($banner->created_at),
             'updated_at' => format_date($banner->updated_at),
-            'action' => $this->actions($banner)
+            'action' => $this->actions($banner),
         ];
 
         return parent::transformResponse($transformedArray);

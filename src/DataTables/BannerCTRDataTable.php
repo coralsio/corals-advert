@@ -67,21 +67,21 @@ class BannerCTRDataTable extends BaseDataTable
                 'class' => 'col-md-3',
                 'type' => 'select2',
                 'options' => Banner::pluck('name', 'id'),
-                'active' => true
+                'active' => true,
             ],
             'totals.zone_id' => [
                 'title' => trans('Advert::attributes.banner_ctr.zone'),
                 'class' => 'col-md-3',
                 'type' => 'select2',
                 'options' => Zone::pluck('name', 'id'),
-                'active' => true
+                'active' => true,
             ],
             'totals.page_slug' => [
                 'title' => trans('Advert::attributes.impression.page_slug'),
                 'class' => 'col-md-3',
                 'type' => 'text',
                 'condition' => 'like',
-                'active' => true
+                'active' => true,
             ],
         ];
     }
@@ -89,7 +89,7 @@ class BannerCTRDataTable extends BaseDataTable
     protected function getOptions()
     {
         return [
-            'has_action' => false
+            'has_action' => false,
         ];
     }
 

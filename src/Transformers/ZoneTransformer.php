@@ -35,7 +35,7 @@ class ZoneTransformer extends BaseTransformer
             'status' => formatStatusAsLabels($zone->status),
             'created_at' => format_date($zone->created_at),
             'updated_at' => format_date($zone->updated_at),
-            'action' => $this->actions($zone)
+            'action' => $this->actions($zone),
         ];
 
         return parent::transformResponse($transformedArray);

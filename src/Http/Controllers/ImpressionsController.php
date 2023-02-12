@@ -41,7 +41,7 @@ class ImpressionsController extends BaseController
     {
         $impression = Impression::where('impression_slug', $impressionSlug)->first();
 
-        if (!$impression) {
+        if (! $impression) {
             abort(404);
         }
 

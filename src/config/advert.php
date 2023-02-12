@@ -18,17 +18,17 @@ return [
                     'icon' => 'fa fa-hand-peace-o fa-fw',
                     'href_pattern' => ['pattern' => '[arg]/campaigns', 'replace' => ['return $object->getShowUrl();']],
                     'label_pattern' => ['pattern' => '[arg]', 'replace' => ["return trans('Advert::module.campaign.title');"]],
-                    'data' => []
-                ]
-            ]
+                    'data' => [],
+                ],
+            ],
         ],
         'campaign' => [
             'presenter' => \Corals\Modules\Advert\Transformers\CampaignPresenter::class,
             'resource_url' => 'adverts/campaigns',
             'limit_types' => [
                 'impressions' => 'Advert::attributes.campaign.limit_type_options.impressions',
-                'clicks' => 'Advert::attributes.campaign.limit_type_options.clicks'
-            ]
+                'clicks' => 'Advert::attributes.campaign.limit_type_options.clicks',
+            ],
         ],
         'impression' => [
             'presenter' => \Corals\Modules\Advert\Transformers\ImpressionPresenter::class,
@@ -42,8 +42,8 @@ return [
             'types' => [
                 'script' => 'Advert::attributes.banner.type_options.script',
                 'media' => 'Advert::attributes.banner.type_options.media',
-                'link' => 'Advert::attributes.banner.type_options.link'
-            ]
+                'link' => 'Advert::attributes.banner.type_options.link',
+            ],
         ],
         'banner_ctr' => [
             'presenter' => \Corals\Modules\Advert\Transformers\BannerCTRPresenter::class,

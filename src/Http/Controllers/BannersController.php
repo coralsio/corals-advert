@@ -3,11 +3,10 @@
 namespace Corals\Modules\Advert\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
+use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Advert\DataTables\BannersDataTable;
 use Corals\Modules\Advert\Http\Requests\BannerRequest;
-use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Advert\Models\Banner;
-use Corals\Modules\Foo\Models\Bar;
 
 class BannersController extends BaseController
 {
@@ -89,7 +88,6 @@ class BannersController extends BaseController
             ->toMediaCollection($banner->mediaCollectionName);
     }
 
-
     public function setBannerZones(Banner $banner, BannerRequest $request)
     {
         $zones = $request->get('zones', []);
@@ -166,21 +164,22 @@ class BannersController extends BaseController
             $action = $request->input('action');
             $selection = json_decode($request->input('selection'), true);
             switch ($action) {
-                case 'delete' :
+                case 'delete':
                     foreach ($selection as $selection_id) {
                         $banner = Banner::findByHash($selection_id);
-                        $banner_request = new BannerRequest;
+                        $banner_request = new BannerRequest();
                         $banner_request->setMethod('DELETE');
                         $this->destroy($banner_request, $banner);
                     }
                     $message = ['level' => 'success', 'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])];
+
                     break;
-                case 'active' :
+                case 'active':
                     foreach ($selection as $selection_id) {
                         $banner = Banner::findByHash($selection_id);
                         if (user()->can('Advert::banner.update')) {
                             $banner->update([
-                                'status' => 'active'
+                                'status' => 'active',
                             ]);
                             $banner->save();
                             $message = ['level' => 'success', 'message' => trans('Advert::attributes.update_status', ['item' => $this->title_singular])];
@@ -188,13 +187,14 @@ class BannersController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('Advert::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
-                case 'inActive' :
+                case 'inActive':
                     foreach ($selection as $selection_id) {
                         $banner = Banner::findByHash($selection_id);
                         if (user()->can('Advert::banner.update')) {
                             $banner->update([
-                                'status' => 'inactive'
+                                'status' => 'inactive',
                             ]);
                             $banner->save();
                             $message = ['level' => 'success', 'message' => trans('Advert::attributes.update_status', ['item' => $this->title_singular])];
@@ -202,12 +202,14 @@ class BannersController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('Advert::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
             }
         } catch (\Exception $exception) {
             log_exception($exception, Banner::class, 'bulkAction');
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
         }
+
         return response()->json($message);
     }
 

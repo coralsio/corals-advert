@@ -39,7 +39,7 @@ class AdvertiserRequest extends BaseRequest
 
         if ($this->isStore()) {
             $rules = array_merge($rules, [
-                'name' => 'required|max:191|unique:advert_advertisers,name'
+                'name' => 'required|max:191|unique:advert_advertisers,name',
             ]);
         }
 

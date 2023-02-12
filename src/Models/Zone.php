@@ -9,7 +9,9 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Zone extends BaseModel
 {
-    use PresentableTrait, LogsActivity, DimensionModelTrait;
+    use PresentableTrait;
+    use LogsActivity;
+    use DimensionModelTrait;
 
     protected $table = 'advert_zones';
     /**

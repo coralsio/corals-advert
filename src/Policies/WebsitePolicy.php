@@ -3,8 +3,8 @@
 namespace Corals\Modules\Advert\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\User\Models\User;
 use Corals\Modules\Advert\Models\Website;
+use Corals\User\Models\User;
 
 class WebsitePolicy extends BasePolicy
 {
@@ -19,6 +19,7 @@ class WebsitePolicy extends BasePolicy
         if ($user->can('Advert::website.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -41,6 +42,7 @@ class WebsitePolicy extends BasePolicy
         if ($user->can('Advert::website.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -54,7 +56,7 @@ class WebsitePolicy extends BasePolicy
         if ($user->can('Advert::website.delete')) {
             return true;
         }
+
         return false;
     }
-
 }

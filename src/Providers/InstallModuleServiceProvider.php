@@ -9,7 +9,7 @@ use Corals\Modules\Advert\database\seeds\AdvertDatabaseSeeder;
 class InstallModuleServiceProvider extends BaseInstallModuleServiceProvider
 {
     protected $migrations = [
-        AdvertsTables::class
+        AdvertsTables::class,
     ];
 
     protected function providerBooted()

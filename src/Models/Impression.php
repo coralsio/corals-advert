@@ -8,13 +8,14 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Impression extends BaseModel
 {
-    use PresentableTrait, LogsActivity;
+    use PresentableTrait;
+    use LogsActivity;
 
     protected $table = 'advert_impressions';
 
     protected $casts = [
         'clicked' => 'boolean',
-        'visitor_details' => 'json'
+        'visitor_details' => 'json',
     ];
 
     /**

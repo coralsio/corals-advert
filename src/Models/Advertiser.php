@@ -8,7 +8,8 @@ use Spatie\Activitylog\Traits\LogsActivity;
 
 class Advertiser extends BaseModel
 {
-    use PresentableTrait, LogsActivity;
+    use PresentableTrait;
+    use LogsActivity;
 
     protected $table = 'advert_advertisers';
     /**
@@ -28,7 +29,6 @@ class Advertiser extends BaseModel
     {
         return $this->hasMany(Campaign::class);
     }
-
 
     public function owner()
     {

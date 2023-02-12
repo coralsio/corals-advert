@@ -7,7 +7,6 @@ use Corals\Modules\Advert\Models\Banner;
 use Corals\Modules\Advert\Models\Campaign;
 use Corals\Modules\Advert\Models\Website;
 use Corals\Modules\Advert\Models\Zone;
-use Corals\Settings\Facades\Modules;
 use Corals\User\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Facades\Auth;
@@ -67,7 +66,7 @@ class ِAdvertTest extends TestCase
             'status' => $this->status[array_rand($this->status)],
             'contact' => 'contact!1',
             'email' => 'advert@corals.io',
-            'notes' => 'testNote'
+            'notes' => 'testNote',
         ];
 
         $response = $this->post('/adverts/advertisers', $this->advertRequest);
@@ -138,7 +137,9 @@ class ِAdvertTest extends TestCase
 
             $this->isSoftDeletableModel(Advertiser::class);
 
-            $this->assertDatabaseMissing('advert_advertisers', [
+            $this->assertDatabaseMissing(
+                'advert_advertisers',
+                [
                     'name' => $this->advert->name,
                     'status' => $this->advert->status,
                     'contact' => $this->advert->contact,
@@ -200,7 +201,7 @@ class ِAdvertTest extends TestCase
             'url' => route('websites.index'),
             'contact' => 'contact!1',
             'email' => 'site@corals.io',
-            'notes' => 'testNote'
+            'notes' => 'testNote',
         ];
 
 
@@ -217,7 +218,7 @@ class ِAdvertTest extends TestCase
             'contact' => $this->site->contact,
             'email' => $this->site->email,
             'status' => $this->site->status,
-            'notes' => $this->site->notes
+            'notes' => $this->site->notes,
         ]);
 
         $this->assertTrue(true);
@@ -236,7 +237,7 @@ class ِAdvertTest extends TestCase
                 'website_id' => $this->site->id,
                 'dimension' => $dimensions[array_rand($dimensions)],
                 'key' => $this->name[array_rand($this->name)],
-                'notes' => 'testNote'
+                'notes' => 'testNote',
             ];
 
             $response = $this->post('/adverts/zones', $this->zoneRequest);
@@ -252,7 +253,7 @@ class ِAdvertTest extends TestCase
                 'status' => $this->zone->status,
                 'dimension' => $this->zone->dimension,
                 'key' => $this->zone->key,
-                'notes' => $this->zone->notes
+                'notes' => $this->zone->notes,
             ]);
 
             $this->assertTrue(true);
@@ -298,10 +299,10 @@ class ِAdvertTest extends TestCase
                 'url' => $this->banner->url,
                 'type' => $this->banner->type,
                 'content' => $this->banner->content,
-                'notes' => $this->banner->notes
+                'notes' => $this->banner->notes,
             ]);
 
-            if (!is_null($zonesIds)) {
+            if (! is_null($zonesIds)) {
                 $this->banner->zones()->sync($zonesIds);
             }
 
@@ -310,5 +311,4 @@ class ِAdvertTest extends TestCase
             $this->assertFalse(false, 'Campaign Not Found');
         }
     }
-
 }
