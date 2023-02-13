@@ -9,10 +9,10 @@ use Corals\Modules\Advert\Models\Zone;
 use Corals\Modules\Advert\Providers\AdvertAuthServiceProvider;
 use Corals\Modules\Advert\Providers\AdvertObserverServiceProvider;
 use Corals\Modules\Advert\Providers\AdvertRouteServiceProvider;
-use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
 use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
+use Illuminate\Foundation\AliasLoader;
+use Illuminate\Support\ServiceProvider;
 
 class AdvertServiceProvider extends ServiceProvider
 {
