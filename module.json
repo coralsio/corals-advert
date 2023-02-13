@@ -6,7 +6,7 @@
     "description": "Advert",
     "namespace": "Corals\\Modules\\Advert",
     "provider": "AdvertServiceProvider",
-    "version": "1.0",
+    "version": "4.0",
     "load_order": "0",
     "folder": "corals-advert",
     "icon": "fa fa-comment",
