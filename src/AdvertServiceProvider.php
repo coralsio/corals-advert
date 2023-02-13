@@ -37,7 +37,6 @@ class AdvertServiceProvider extends ServiceProvider
 
         $this->registerCustomFieldsModels();
         $this->registerModulesPackages();
-
     }
 
     /**
