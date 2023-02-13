@@ -40,7 +40,7 @@ class ZoneRequest extends BaseRequest
         if ($this->isStore()) {
             $rules = array_merge($rules, [
                 'key' => 'required|max:191|unique:advert_zones,key',
-                'name' => 'required|max:191|unique:advert_zones,name'
+                'name' => 'required|max:191|unique:advert_zones,name',
             ]);
         }
 

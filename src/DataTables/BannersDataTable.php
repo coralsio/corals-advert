@@ -48,7 +48,7 @@ class BannersDataTable extends BaseDataTable
             'campaign' => ['title' => trans('Advert::attributes.banner.campaign'), 'orderable' => false, 'searchable' => false],
             'dimension' => ['title' => trans('Advert::attributes.banner.dimension')],
             'type' => ['title' => trans('Advert::attributes.banner.type')],
-            'weight' => ['title' =>trans('Advert::attributes.banner.weight')],
+            'weight' => ['title' => trans('Advert::attributes.banner.weight')],
             'notes' => ['title' => trans('Advert::attributes.banner.notes')],
             'status' => ['title' => trans('Corals::attributes.status')],
             'updated_at' => ['title' => trans('Corals::attributes.updated_at')],
@@ -74,6 +74,7 @@ class BannersDataTable extends BaseDataTable
     protected function getOptions()
     {
         $url = url(config('advert.models.banner.resource_url'));
+
         return ['resource_url' => $url];
     }
 }

@@ -22,11 +22,12 @@ class AdvertMenuDatabaseSeeder extends Seeder
             'description' => 'Advert Menu Item',
             'icon' => 'fa fa-bullhorn',
             'target' => null, 'roles' => '["1"]',
-            'order' => 0
+            'order' => 0,
         ]);
 
         // seed subscriptions children menu
-        \DB::table('menus')->insert([
+        \DB::table('menus')->insert(
+            [
                 [
                     'parent_id' => $Advert_menu_id,
                     'key' => 'adverts-advertisers',
@@ -36,7 +37,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Advertisers List Menu Item',
                     'icon' => 'fa fa-users',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -47,7 +48,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Campaigns List Menu Item',
                     'icon' => 'fa fa-hand-peace-o',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -58,7 +59,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Banners List Menu Item',
                     'icon' => 'fa fa-film',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -69,7 +70,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Websites List Menu Item',
                     'icon' => 'fa fa-globe',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -80,7 +81,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Zones List Menu Item',
                     'icon' => 'fa fa-crop',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -91,7 +92,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Impressions List Menu Item',
                     'icon' => 'fa fa-list',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
                 [
                     'parent_id' => $Advert_menu_id,
@@ -102,7 +103,7 @@ class AdvertMenuDatabaseSeeder extends Seeder
                     'description' => 'Banners CTR Report',
                     'icon' => 'fa fa-list',
                     'target' => null, 'roles' => '["1"]',
-                    'order' => 0
+                    'order' => 0,
                 ],
             ]
         );

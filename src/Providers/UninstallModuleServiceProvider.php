@@ -6,12 +6,12 @@ use Corals\Foundation\Providers\BaseUninstallModuleServiceProvider;
 use Corals\Menu\Models\Menu;
 use Corals\Modules\Advert\database\migrations\AdvertsTables;
 use Corals\User\Models\Permission;
-use \Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class UninstallModuleServiceProvider extends BaseUninstallModuleServiceProvider
 {
     protected $migrations = [
-        AdvertsTables::class
+        AdvertsTables::class,
     ];
 
     protected function providerBooted()

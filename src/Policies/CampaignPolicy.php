@@ -3,12 +3,11 @@
 namespace Corals\Modules\Advert\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\User\Models\User;
 use Corals\Modules\Advert\Models\Campaign;
+use Corals\User\Models\User;
 
 class CampaignPolicy extends BasePolicy
 {
-
     protected $administrationPermission = 'Administrations::admin.advertiser';
 
     /**
@@ -20,6 +19,7 @@ class CampaignPolicy extends BasePolicy
         if ($user->can('Advert::campaign.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -42,6 +42,7 @@ class CampaignPolicy extends BasePolicy
         if ($user->can('Advert::campaign.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -55,6 +56,7 @@ class CampaignPolicy extends BasePolicy
         if ($user->can('Advert::campaign.delete')) {
             return true;
         }
+
         return false;
     }
 }

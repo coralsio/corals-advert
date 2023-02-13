@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Corals\Modules\Advert\Http\Controllers\API;
 
 use Corals\Foundation\Http\Controllers\APIPublicController;

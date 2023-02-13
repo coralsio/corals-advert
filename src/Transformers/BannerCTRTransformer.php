@@ -27,8 +27,10 @@ class BannerCTRTransformer extends BaseTransformer
             'zone_id' => $impression->zone->present('name'),
             'number_of_clicks' => number_format($impression->number_of_clicks ?? 0),
             'number_of_views' => number_format($impression->number_of_views ?? 0),
-            'page_slug' => strlen($impression->page_slug) > 60 ? generatePopover($impression->page_slug,
-                Str::limit($impression->page_slug, 60)) : $impression->page_slug,
+            'page_slug' => strlen($impression->page_slug) > 60 ? generatePopover(
+                $impression->page_slug,
+                Str::limit($impression->page_slug, 60)
+            ) : $impression->page_slug,
             'ctr' => $impression->ctr ? (number_format($impression->ctr ?? 0, 2) . '%') : 0,
             'created_at' => format_date($impression->created_at),
             'updated_at' => format_date($impression->updated_at) ?? '-',

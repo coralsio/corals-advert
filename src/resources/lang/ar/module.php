@@ -8,7 +8,7 @@ return [
     'advertiser' => [
         'title' => 'المعلنين',
         'title_singular' => 'معلن',
-        'title_singular_name' => 'معلن [:name]'
+        'title_singular_name' => 'معلن [:name]',
     ],
     'banner' => [
         'title' => 'الاعلانات',
@@ -17,7 +17,7 @@ return [
     'campaign' => [
         'title' => 'حملات',
         'title_singular' => 'حملة',
-        'title_singular_name' => 'حملة [:name]'
+        'title_singular_name' => 'حملة [:name]',
     ],
     'impression' => [
         'title' => 'الانطباعات',
@@ -33,5 +33,5 @@ return [
     'zone' => [
         'title' => 'المناطق',
         'title_singular' => 'منطقة',
-    ]
+    ],
 ];

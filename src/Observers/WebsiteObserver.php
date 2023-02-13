@@ -6,7 +6,6 @@ use Corals\Modules\Advert\Models\Website;
 
 class WebsiteObserver
 {
-
     /**
      * @param Website $website
      */

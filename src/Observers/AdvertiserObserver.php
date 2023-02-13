@@ -6,7 +6,6 @@ use Corals\Modules\Advert\Models\Advertiser;
 
 class AdvertiserObserver
 {
-
     /**
      * @param Advertiser $advertiser
      */

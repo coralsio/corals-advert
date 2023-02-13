@@ -3,8 +3,8 @@
 namespace Corals\Modules\Advert\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\User\Models\User;
 use Corals\Modules\Advert\Models\Zone;
+use Corals\User\Models\User;
 
 class ZonePolicy extends BasePolicy
 {
@@ -19,6 +19,7 @@ class ZonePolicy extends BasePolicy
         if ($user->can('Advert::zone.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -41,6 +42,7 @@ class ZonePolicy extends BasePolicy
         if ($user->can('Advert::zone.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -54,6 +56,7 @@ class ZonePolicy extends BasePolicy
         if ($user->can('Advert::zone.delete')) {
             return true;
         }
+
         return false;
     }
 }

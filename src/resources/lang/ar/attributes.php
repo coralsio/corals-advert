@@ -16,7 +16,7 @@ return [
         'type_options' => [
             'script' => 'النصي',
             'media' => 'وسائل الاعلام',
-            'link' => 'الرابط'
+            'link' => 'الرابط',
         ],
         'weight' => 'الوزن',
         'notes' => 'ملاحظات',
@@ -34,7 +34,7 @@ return [
         'limit_type' => 'نوع الحد',
         'limit_type_options' => [
             'impressions' => 'الانطباعات',
-            'clicks' => 'الضغطات'
+            'clicks' => 'الضغطات',
         ],
         'limit_per_day' => 'حد لكل يوم',
         'limit_per_day_help' => '*مطلوب في حالة تحديد نوع الحد',
@@ -62,5 +62,5 @@ return [
         'notes' => 'ملاحظات',
         'banner' => 'الاعلانات',
         'embed_code' => 'تضمين الكود',
-    ]
+    ],
 ];

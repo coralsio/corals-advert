@@ -9,7 +9,7 @@ return [
         'notes' => 'Notes',
         'status_option' => [
             'active' => 'Active',
-            'inactive' => 'Inactive'
+            'inactive' => 'Inactive',
         ],
     ],
     'banner' => [
@@ -20,7 +20,7 @@ return [
         'type_options' => [
             'script' => 'Script',
             'media' => 'Media',
-            'link' => 'Link'
+            'link' => 'Link',
         ],
         'weight' => 'Weight',
         'notes' => 'Notes',
@@ -33,7 +33,7 @@ return [
         'zone' => 'Zone',
         'clicks' => '# of Clicks',
         'impressions' => 'Impressions',
-        'ctr' => 'CTR'
+        'ctr' => 'CTR',
     ],
     'campaign' => [
         'name' => 'Name',
@@ -46,7 +46,7 @@ return [
         'limit_type' => 'Limit Type',
         'limit_type_options' => [
             'impressions' => 'Impressions',
-            'clicks' => 'Clicks'
+            'clicks' => 'Clicks',
         ],
         'limit_per_day' => 'Limit per day',
         'limit_per_day_help' => '* required if limit type selected',
@@ -76,5 +76,5 @@ return [
         'embed_code' => ' Embed Code',
     ],
     'update_status' => 'Updated Status !',
-    'no_permission' => 'There is no permission update status'
+    'no_permission' => 'There is no permission update status',
 ];

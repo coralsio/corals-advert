@@ -38,14 +38,14 @@ class BannerRequest extends BaseRequest
                 'url' => 'max:191',
                 'type' => 'required|max:191',
                 'script' => 'required_if:type,script',
-                'link' => 'required_if:type,link'
+                'link' => 'required_if:type,link',
             ]);
         }
 
         if ($this->isStore()) {
             $rules = array_merge($rules, [
                 'media' => 'required_if:type,image|mimes:jpg,jpeg,png,gif|max:' . maxUploadFileSize(),
-                'name' => 'required|max:191|unique:advert_banners,name'
+                'name' => 'required|max:191|unique:advert_banners,name',
             ]);
         }
 
@@ -54,7 +54,7 @@ class BannerRequest extends BaseRequest
 
             $rules = array_merge($rules, [
                 'media' => 'mimes:jpg,jpeg,png|max:' . maxUploadFileSize(),
-                'name' => 'required|max:191|unique:advert_banners,name,' . $banner->id
+                'name' => 'required|max:191|unique:advert_banners,name,' . $banner->id,
             ]);
         }
 

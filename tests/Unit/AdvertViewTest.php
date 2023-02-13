@@ -34,7 +34,6 @@ class AdvertViewTest extends TestCase
         $response->assertStatus(200)->assertViewIs('Advert::advertisers.index');
     }
 
-
     /**
      * A basic test example.
      *
@@ -46,5 +45,4 @@ class AdvertViewTest extends TestCase
 
         $response->assertStatus(200)->assertViewIs('Advert::advertisers.create_edit');
     }
-
 }

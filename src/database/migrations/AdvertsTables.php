@@ -211,7 +211,6 @@ class AdvertsTables extends Migration
                 ->on('advert_impressions')
                 ->onDelete('cascade')
                 ->onUpdate('cascade');
-
         });
     }
 

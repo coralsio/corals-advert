@@ -3,9 +3,9 @@
 namespace Corals\Modules\Advert\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
+use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Advert\DataTables\AdvertisersDataTable;
 use Corals\Modules\Advert\Http\Requests\AdvertiserRequest;
-use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Advert\Models\Advertiser;
 
 class AdvertisersController extends BaseController
@@ -118,21 +118,22 @@ class AdvertisersController extends BaseController
             $action = $request->input('action');
             $selection = json_decode($request->input('selection'), true);
             switch ($action) {
-                case 'delete' :
+                case 'delete':
                     foreach ($selection as $selection_id) {
                         $Advertiser = Advertiser::findByHash($selection_id);
-                        $Advertiser_request = new AdvertiserRequest;
+                        $Advertiser_request = new AdvertiserRequest();
                         $Advertiser_request->setMethod('DELETE');
                         $this->destroy($Advertiser_request, $Advertiser);
                     }
                     $message = ['level' => 'success', 'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])];
+
                     break;
-                case 'active' :
+                case 'active':
                     foreach ($selection as $selection_id) {
                         $Advertiser = Advertiser::findByHash($selection_id);
                         if (user()->can('Advert::advertiser.update')) {
                             $Advertiser->update([
-                                'status' => 'active'
+                                'status' => 'active',
                             ]);
                             $Advertiser->save();
                             $message = ['level' => 'success', 'message' => trans('Advert::attributes.update_status', ['item' => $this->title_singular])];
@@ -140,13 +141,14 @@ class AdvertisersController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('Advert::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
-                case 'inActive' :
+                case 'inActive':
                     foreach ($selection as $selection_id) {
                         $Advertiser = Advertiser::findByHash($selection_id);
                         if (user()->can('Advert::advertiser.update')) {
                             $Advertiser->update([
-                                'status' => 'inactive'
+                                'status' => 'inactive',
                             ]);
                             $Advertiser->save();
                             $message = ['level' => 'success', 'message' => trans('Advert::attributes.update_status', ['item' => $this->title_singular])];
@@ -154,12 +156,14 @@ class AdvertisersController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('Advert::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
             }
         } catch (\Exception $exception) {
             log_exception($exception, Advertiser::class, 'bulkAction');
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
         }
+
         return response()->json($message);
     }
 

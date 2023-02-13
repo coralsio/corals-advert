@@ -3,12 +3,11 @@
 namespace Corals\Modules\Advert\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\User\Models\User;
 use Corals\Modules\Advert\Models\Banner;
+use Corals\User\Models\User;
 
 class BannerPolicy extends BasePolicy
 {
-
     protected $administrationPermission = 'Administrations::admin.advertiser';
 
     /**
@@ -20,6 +19,7 @@ class BannerPolicy extends BasePolicy
         if ($user->can('Advert::banner.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -42,6 +42,7 @@ class BannerPolicy extends BasePolicy
         if ($user->can('Advert::banner.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -55,6 +56,7 @@ class BannerPolicy extends BasePolicy
         if ($user->can('Advert::banner.delete')) {
             return true;
         }
+
         return false;
     }
 }

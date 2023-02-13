@@ -12,6 +12,6 @@ $Advert_menu_id = \DB::table('menus')->where('key', 'advert')->first()->id;
         'description' => 'Banners CTR Report',
         'icon' => 'fa fa-list',
         'target' => null, 'roles' => '["1"]',
-        'order' => 0
+        'order' => 0,
     ],
 ]);

@@ -33,7 +33,7 @@ class AdvertiserTransformer extends BaseTransformer
             'status' => formatStatusAsLabels($advertiser->status),
             'created_at' => format_date($advertiser->created_at),
             'updated_at' => format_date($advertiser->updated_at),
-            'action' => $this->actions($advertiser)
+            'action' => $this->actions($advertiser),
         ];
 
         return parent::transformResponse($transformedArray);

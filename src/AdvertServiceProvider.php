@@ -23,7 +23,6 @@ class AdvertServiceProvider extends ServiceProvider
      *
      * @return void
      */
-
     public function boot()
     {
         // Load view
@@ -72,6 +71,7 @@ class AdvertServiceProvider extends ServiceProvider
             } else {
                 $zone = Zone::where('key', $key)->active()->first();
                 $render = view()->make($view)->with(['zone' => $zone, 'zone_key' => $key])->render();
+
                 return $render;
             }
 
@@ -87,7 +87,6 @@ class AdvertServiceProvider extends ServiceProvider
         Settings::addCustomFieldModel(Banner::class);
         Settings::addCustomFieldModel(Zone::class);
     }
-
 
     public function registerModulesPackages()
     {

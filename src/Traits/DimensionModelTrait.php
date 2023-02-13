@@ -2,7 +2,6 @@
 
 namespace Corals\Modules\Advert\Traits;
 
-
 trait DimensionModelTrait
 {
     public function getWidthAttribute()

@@ -13,10 +13,9 @@ class Advert
     /**
      * Advert constructor.
      */
-    function __construct()
+    public function __construct()
     {
     }
-
 
     public function getDimensionsList()
     {
@@ -79,8 +78,7 @@ class Advert
     public function getRandomWeightedBanner(Zone $zone)
     {
         return rescue(function () use ($zone) {
-            if (!$zone->isValid()) {
-
+            if (! $zone->isValid()) {
                 return $this->EmptyZoneHandler();
             }
 
@@ -116,11 +114,11 @@ class Advert
             ]);
 
             $impression->visitorDetail()->updateOrCreate(['impression_id' => $impression->id], $this->getVisitorDetails());
+
             return view('Advert::zones.partials.show')->with(compact('zone', 'banner', 'bannerSlug'))->render();
         }, function () {
             return $this->EmptyZoneHandler();
         });
-
     }
 
     protected function getVisitorDetails()
@@ -157,6 +155,5 @@ class Advert
         $code = '<div data-embed-src="' . url('adverts/' . $zone->hashed_id . '/embed') . '"></div><script type="text/javascript" src="' . asset('assets/corals/plugins/advert/js/embed.js') . '"></script>';
 
         return '<pre><code id="embed_' . $zone->hashed_id . '">' . htmlentities($code, ENT_COMPAT, 'UTF-8') . '</code> <a href="#" onclick="event.preventDefault();" class="copy-button"data-clipboard-target="#embed_' . $zone->hashed_id . '"><i class="fa fa-clipboard"></i></a></pre>';
-
     }
 }

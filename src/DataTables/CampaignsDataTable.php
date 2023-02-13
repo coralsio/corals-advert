@@ -52,6 +52,7 @@ class CampaignsDataTable extends BaseDataTable
         if (user()->hasPermissionTo('Advert::advertiser.view')) {
             $columns['advertiser'] = ['title' => trans('Advert::attributes.campaign.advertiser'), 'orderable' => false, 'searchable' => false];
         }
+
         return $columns;
     }
 
@@ -74,6 +75,7 @@ class CampaignsDataTable extends BaseDataTable
     protected function getOptions()
     {
         $url = url(config('advert.models.campaign.resource_url'));
+
         return ['resource_url' => $url];
     }
 }

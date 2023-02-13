@@ -6,7 +6,6 @@ use Corals\Modules\Advert\Models\Zone;
 
 class ZoneObserver
 {
-
     /**
      * @param Zone $zone
      */

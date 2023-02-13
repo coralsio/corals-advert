@@ -8,7 +8,7 @@ return [
     'advertiser' => [
         'title' => 'Advertisers',
         'title_singular' => 'Advertiser',
-        'title_singular_name' => 'Advertiser [:name]'
+        'title_singular_name' => 'Advertiser [:name]',
     ],
     'banner' => [
         'title' => 'Banners',
@@ -17,7 +17,7 @@ return [
     'campaign' => [
         'title' => 'Campaigns',
         'title_singular' => 'Campaign',
-        'title_singular_name' => 'Campaign [:name]'
+        'title_singular_name' => 'Campaign [:name]',
     ],
     'impression' => [
         'title' => 'Impressions',
@@ -37,5 +37,5 @@ return [
     'banner_ctr' => [
         'title' => 'Banners CTR',
         'title_singular' => 'Banner CTR',
-    ]
+    ],
 ];
