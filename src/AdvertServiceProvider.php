@@ -37,6 +37,7 @@ class AdvertServiceProvider extends ServiceProvider
         $this->registerShortcode();
 
         $this->registerCustomFieldsModels();
+        $this->registerModulesPackages();
 
     }
 
