@@ -13,6 +13,8 @@ use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;
+use Corals\Settings\Models\Module;
+
 
 class AdvertServiceProvider extends ServiceProvider
 {
@@ -25,6 +27,7 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function boot()
     {
+        $this->registerModulesPackages();
         // Load view
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'Advert');
 
@@ -36,7 +39,6 @@ class AdvertServiceProvider extends ServiceProvider
         $this->registerShortcode();
 
         $this->registerCustomFieldsModels();
-        $this->registerModulesPackages();
     }
 
     /**
