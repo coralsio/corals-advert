@@ -26,7 +26,7 @@ class AdvertServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerModulesPackages();
-        if (!\DB::table('modules')->where('code', 'corals-advert')
+        if (! \DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
@@ -52,7 +52,7 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (!\DB::table('modules')->where('code', 'corals-advert')
+        if (! \DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
