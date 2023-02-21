@@ -26,7 +26,9 @@ class AdvertServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerModulesPackages();
-        if (!Module::installed()->where('code', 'corals-advert')->exists()) {
+        if (!\DB::table('modules')->where('code', 'corals-advert')
+            ->where('installed', true)
+            ->exists()) {
             return;
         };
 
