@@ -26,6 +26,10 @@ class AdvertServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerModulesPackages();
+        if (!Module::installed()->where('code', 'corals-advert')->exists()) {
+            return;
+        };
+
         // Load view
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'Advert');
 
@@ -46,6 +50,12 @@ class AdvertServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        if (!\DB::table('modules')->where('code', 'corals-advert')
+            ->where('installed', true)
+            ->exists()) {
+            return;
+        };
+
         $this->mergeConfigFrom(__DIR__ . '/config/advert.php', 'advert');
 
         $this->app->register(AdvertRouteServiceProvider::class);
