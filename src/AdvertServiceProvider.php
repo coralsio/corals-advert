@@ -32,7 +32,7 @@ class AdvertServiceProvider extends BasePackageServiceProvider
      */
     public function bootPackage()
     {
-        if (!\DB::table('modules')->where('code', 'corals-advert')
+        if (! \DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
@@ -58,7 +58,7 @@ class AdvertServiceProvider extends BasePackageServiceProvider
      */
     public function registerPackage()
     {
-        if (!\DB::table('modules')->where('code', 'corals-advert')
+        if (! \DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
