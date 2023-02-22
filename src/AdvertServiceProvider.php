@@ -2,6 +2,7 @@
 
 namespace Corals\Modules\Advert;
 
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Advert\Facades\Advert;
 use Corals\Modules\Advert\Models\Advertiser;
 use Corals\Modules\Advert\Models\Banner;
@@ -12,21 +13,26 @@ use Corals\Modules\Advert\Providers\AdvertRouteServiceProvider;
 use Corals\Settings\Facades\Modules;
 use Corals\Settings\Facades\Settings;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
 
-class AdvertServiceProvider extends ServiceProvider
+class AdvertServiceProvider extends BasePackageServiceProvider
 {
+    /**
+     * @var
+     */
     protected $defer = true;
+    /**
+     * @var
+     */
+    protected $packageCode = 'corals-advert';
 
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-    public function boot()
+    public function bootPackage()
     {
-        $this->registerModulesPackages();
-        if (! \DB::table('modules')->where('code', 'corals-advert')
+        if (!\DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
@@ -50,9 +56,9 @@ class AdvertServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function registerPackage()
     {
-        if (! \DB::table('modules')->where('code', 'corals-advert')
+        if (!\DB::table('modules')->where('code', 'corals-advert')
             ->where('installed', true)
             ->exists()) {
             return;
