@@ -52,7 +52,6 @@ class AdvertServiceProvider extends BasePackageServiceProvider
      */
     public function registerPackage()
     {
-
         $this->mergeConfigFrom(__DIR__ . '/config/advert.php', 'advert');
 
         $this->app->register(AdvertRouteServiceProvider::class);
