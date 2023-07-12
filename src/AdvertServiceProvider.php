@@ -39,7 +39,7 @@ class AdvertServiceProvider extends BasePackageServiceProvider
         $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'Advert');
 
         // Load migrations
-//        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
+        //        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
         $this->registerShortcode();
 
         $this->registerCustomFieldsModels();
@@ -80,9 +80,9 @@ class AdvertServiceProvider extends BasePackageServiceProvider
                 return $render;
             }
 
-//            if (view()->exists($view)) {
+            //            if (view()->exists($view)) {
             /*                return "<?php  echo \$__env->make('$view')->render(); ?>";*/
-//            }
+            //            }
         });
     }
 
