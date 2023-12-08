@@ -15,14 +15,12 @@ class AdvertSampleDatabaseSeeder extends Seeder
     public function run()
     {
         \DB::table('advert_advertisers')->insert([
-            'id' => 1,
             'name' => 'Corals',
             'contact' => 'Saeed',
             'email' => 'saeed@corals.io',
         ]);
 
         \DB::table('advert_campaigns')->insert([
-            'id' => 1,
             'name' => Carbon::now()->format('F-Y') . ' corals campaign',
             'starts_at' => Carbon::now()->firstOfMonth(),
             'ends_at' => Carbon::now()->endOfMonth(),
@@ -34,7 +32,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
         \DB::table('advert_banners')->insert([
             0 =>
                 [
-                    'id' => 1,
                     'name' => 'Red',
                     'dimension' => '300x250',
                     'type' => 'link',
@@ -52,7 +49,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             1 =>
                 [
-                    'id' => 2,
                     'name' => 'Blue',
                     'dimension' => '300x250',
                     'type' => 'link',
@@ -70,7 +66,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             2 =>
                 [
-                    'id' => 3,
                     'name' => 'Green',
                     'dimension' => '300x250',
                     'type' => 'link',
@@ -88,7 +83,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             3 =>
                 [
-                    'id' => 4,
                     'name' => 'Yellow',
                     'dimension' => '120x600',
                     'type' => 'link',
@@ -106,7 +100,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             4 =>
                 [
-                    'id' => 5,
                     'name' => 'Purple',
                     'dimension' => '120x600',
                     'type' => 'link',
@@ -124,7 +117,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             5 =>
                 [
-                    'id' => 6,
                     'name' => 'Sky Blue',
                     'dimension' => '120x600',
                     'type' => 'link',
@@ -143,7 +135,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
         ]);
 
         \DB::table('advert_websites')->insert([
-            'id' => 1,
             'url' => 'https://www.corals.io/',
             'name' => 'Corals.io website',
             'contact' => 'Corals',
@@ -153,7 +144,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
         \DB::table('advert_zones')->insert([
             0 =>
                 [
-                    'id' => 1,
                     'name' => 'Skyscraper',
                     'key' => 'skyscraper',
                     'dimension' => '120x600',
@@ -168,7 +158,6 @@ class AdvertSampleDatabaseSeeder extends Seeder
                 ],
             1 =>
                 [
-                    'id' => 2,
                     'name' => 'Sidebar Top',
                     'key' => 'sidebar-top',
                     'dimension' => '300x250',
