@@ -1,6 +1,6 @@
 # Corals Advert
 
-This is where your description should go. Try and limit it to a paragraph or two. Consider adding a small example.
+Ads manager Laraship module is a comprehensive Laravel Advertisement Manager plugin on Laraship platform and external websites to have a centralized to one location to manage data and view analytics.
 
 ## Installation
 
